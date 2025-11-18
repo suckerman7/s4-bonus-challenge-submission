@@ -6,20 +6,131 @@
     <link rel="icon" type="image/svg+xml" href="./workintech.svg" />
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workintech + 🍕</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Jersey+25&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Chelsea+Market&family=Jersey+25&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Chelsea+Market&family=Jersey+25&family=Quattrocento:wght@400;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Chelsea+Market&family=Jersey+25&family=Quattrocento:wght@400;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Satisfy&display=swap" rel="stylesheet">
+    <title>Teknolojik Yemekler</title>
   </head>
 
   <body>
     <div id="app">
-      <div>
-        <a href="https://github.com/Workintech/fsweb-s5-bonus-challenge-html-pizza" target="_blank">
-          <img src="./workintech.svg" class="logo" alt="Workintech logo">
-        </a>
-        <h1>Hello Coder!</h1>
-        <p class="read-the-docs">
-          Click on the Workintech logo to see the Readme of the project
-        </p>
+      <header class="hero">
+        <img src="public/assets/iteration-1/logo.svg">
+        <h3 class="hero-subtitle">Fırsatı Kaçırma</h3>
+        <h1 class="hero-title">KOD ACIKTIRIR<br>PİZZA, DOYURUR</h1>
+        <button class="btn">Acıktım</button>
+      </header>
+
+      <div class="top-nav">
+        <div><img src="public/assets/iteration-2/icons/1.svg">Yeni! Kore</div>
+        <div><img src="public/assets/iteration-2/icons/2.svg">Pizza</div>
+        <div><img src="public/assets/iteration-2/icons/3.svg">Burger</div>
+        <div><img src="public/assets/iteration-2/icons/4.svg">Kızartmalar</div>
+        <div><img src="public/assets/iteration-2/icons/5.svg">Fast food</div>
+        <div><img src="public/assets/iteration-2/icons/6.svg">Gazlı içecek</div>
       </div>
+
+      <section class="promo-section">
+          <div class="promo-card promo-1">
+              <h2>Özel<br>Lezzetus</h2>
+              <p>Position:Absolute Acı Burger</p>
+              <button>Sipariş Ver</button>
+          </div>
+
+
+          <div class="promo-card promo-2">
+                <h2>Hackathlon<br>Burger Menü</h2>
+                <button>Sipariş Ver</button>
+          </div>
+
+
+          <div class="promo-card promo-3">
+              <h2><span class="red-text">Çooook</span> hızlı<br>npm gibi kurye</h2>
+              <button>Sipariş Ver</button>
+          </div>
+      </section>
+
+      <h2 class="category-title">en çok paketlenen menüler</h2>
+      <h3 class="category-subtitle">Acıktıran Kodlara Doyuran Lezzetler</h3>
+
+
+      <div class="filter-buttons">
+          <button class="filter-btn"><img src="public/assets/iteration-2/icons/1.svg">Ramen</button>
+          <button class="filter-btn active"><img src="public/assets/iteration-2/icons/2.svg">Pizza</button>
+          <button class="filter-btn"><img src="public/assets/iteration-2/icons/3.svg">Burger</button>
+          <button class="filter-btn"><img src="public/assets/iteration-2/icons/4.svg">Kızartmalar</button>
+          <button class="filter-btn"><img src="public/assets/iteration-2/icons/5.svg">Fast food</button>
+          <button class="filter-btn"><img src="public/assets/iteration-2/icons/6.svg">Soft drinks</button>
+      </div>
+
+      <section class="menu-grid">
+        <div class="menu-card">
+            <img src="public/assets/iteration-2/pictures/food-1.png" alt="">
+            <h4>Terminal Pizza</h4>
+            <div class="info">
+                <span>4.9 ★</span>
+                <span>60₺</span>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <img src="public/assets/iteration-2/pictures/food-1.png" alt="">
+            <h4>Position Absolute Aci Pizza</h4>
+            <div class="info">
+                <span>4.9 ★</span>
+                <span>60₺</span>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <img src="public/assets/iteration-2/pictures/food-3.png" alt="">
+            <h4>useEffect Tavuklu Burger</h4>
+            <div class="info">
+                <span>4.9 ★</span>
+                <span>60₺</span>
+            </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-left">
+            <img src="public/assets/iteration-2/footer/logo-footer.svg" alt="">
+            <p><img src="public/assets/iteration-2/footer/icons/icon-1.png" alt="">34 Londonderry Road, İstanbul Türkiye</p>
+            <p><img src="public/assets/iteration-2/footer/icons/icon-2.png" alt="">aciktim@teknolojikyemekler.com</p>
+            <p><img src="public/assets/iteration-2/footer/icons/icon-3.png" alt="">+90 216 123 45 67</p>
+        </div>
+
+        <div class="footer-menu">
+            <h3>Hot Menu</h3>
+            <p>Terminal Pizza</p>
+            <p>5 Kişilik Hackathlon Pizza</p>
+            <p>useEffect Tavuklu Pizza</p>
+            <p>Beyaz Console Frosty</p>
+            <p>Testler Geçti Mutlu Burger</p>
+            <p>Position Absolute Acı Burger</p>
+        </div>
+
+        <div class="footer-instagram">
+            <h3>Instagram</h3>
+            <div class="insta-grid">
+                <img src="public/assets/iteration-2/footer/insta/li-0.png" alt="">
+                <img src="public/assets/iteration-2/footer/insta/li-1.png" alt="">
+                <img src="public/assets/iteration-2/footer/insta/li-2.png" alt="">
+                <img src="public/assets/iteration-2/footer/insta/li-3.png" alt="">
+                <img src="public/assets/iteration-2/footer/insta/li-4.png" alt="">
+                <img src="public/assets/iteration-2/footer/insta/li-5.png" alt="">
+            </div>
+        </div>
+
+       <div class="footer-bottom">
+            <span>© 2023 Teknolojik Yemekler.</span>
+            <span><a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a></span>
+        </div>
+    </footer>
     </div>
   </body>
 
