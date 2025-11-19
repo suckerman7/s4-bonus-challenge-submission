@@ -19,16 +19,15 @@
   --red: #CE2829;
   --beige: #FAF7F2;
 
-  --font-1: 'Roboto Condensed', sans-serif;
-  --font-2: 'Barlow', sans-serif;
-  --font-3: 'Quattrocento', serif;
-  --font-4: 'Satisfy', cursive;
+  --font-1: 'Roboto Condensed';
+  --font-2: 'Barlow';
+  --font-3: 'Quattrocento';
+  --font-4: 'Satisfy';
 }
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 a {
@@ -54,7 +53,8 @@ body {
 .hero {
   background: url(public/assets/iteration-1/home-banner.png);
   background-size: 100% 100%;
-  color: white;
+  width: 100%;
+  color: var(--beige);
   padding: 80px 20px;
   text-align: center;
   position: relative;
@@ -70,7 +70,7 @@ body {
 
 .hero-subtitle {
   font-size: 1rem;
-  font-family: var(--font-1);
+  font-family: var(--font-4);
   color: var(--yellow);
 }
 
@@ -93,11 +93,11 @@ body {
 .top-nav {
   background: white;
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
   padding: 16px;
   border-bottom: 1px solid #ddd;
-  text-align: center;
 }
 
 .top-nav div {
@@ -105,37 +105,66 @@ body {
   font-size: 0.9rem;
   font-weight: bold;
   color: var(--dark-gray);
-  justify-content: center;
-  align-items: center;
+  font-family: var(--font-2);
+  gap: 10px;
 }
 
 .promo-section {
-  width: 85%;
-  margin: 40px auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  width: 100%;
+  height: 100%;
+  gap: 11px;
+  margin-top: 60px;
 }
 
-.promo-card {
-padding: 25px;
-border-radius: 16px;
-position: relative;
-overflow: hidden;
-height: 170px;
-color: white;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-text-align: start;
+.promo-card-left {
+  width: 50%;
+  background: url(public/assets/iteration-2/cta/kart-1.png);
+  background-size: 100% 100%;
 }
 
+.promo-card-left h2 {
+  font-family: var(--font-3); 
+  font-size: 2rem;
+}
 
-.promo-1 { background: url(public/assets/iteration-2/cta/kart-1.png); background-size: 100% 100%;}
-.promo-1 h2 {font-family: var(--font-3);}
-.promo-2 { background: url(public/assets/iteration-2/cta/kart-2.png); background-size: 100% 100%;}
-.promo-2 h2 {font-family: var(--font-2);}
-.promo-3 { background: url(public/assets/iteration-2/cta/kart-3.png); background-size: 100% 100%;}
-.promo-3 h2 {color: black; font-family: var(--font-3);}
+.promo-card-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.promo-card-right-top {
+  background: url(public/assets/iteration-2/cta/kart-2.png); 
+  background-size: 100% 100%;
+}
+
+.promo-card-right-top h2 {
+  font-family: var(--font-2);
+}
+
+.promo-card-right-bottom {
+  background: url(public/assets/iteration-2/cta/kart-3.png); 
+  background-size: 100% 100%;
+}
+
+.promo-card-right-bottom h2 {
+  color: black; 
+  font-family: var(--font-3);
+}
+
+.promo-card-right-top, .promo-card-right-bottom {
+  flex: 1;
+}
+
+.promo-card-left, .promo-card-right-top, .promo-card-right-bottom {
+  border-radius: 12px;
+  padding: 25px;
+  overflow: hidden;
+  color: var(--beige);
+  text-align: left;
+}
 
 .red-text {
   color: red;
@@ -147,15 +176,16 @@ color: var(--red);
 border: none;
 padding: 8px 20px;
 font-size: 0.9rem;
-border-radius: 25px;
+border-radius: 50px;
 width: fit-content;
 }
 
 .category-title {
 text-align: center;
-font-family: var(--font-3);
+font-family: var(--font-4);
 font-size: 2rem;
 margin-top: 60px;
+color: var(--red);
 }
 
 
@@ -163,13 +193,13 @@ margin-top: 60px;
 text-align: center;
 font-size: 1.8rem;
 margin-bottom: 20px;
-font-family: var(--font-1);
+font-family: var(--font-2);
 }
 
 
 .filter-buttons {
 display: flex;
-justify-content: center;
+justify-content: space-between;
 flex-wrap: wrap;
 gap: 10px;
 margin-bottom: 30px;
@@ -178,6 +208,7 @@ margin-bottom: 30px;
 
 .filter-btn {
 padding: 10px 22px;
+line-height: 0px;
 background: white;
 border-radius: 22px;
 border: 1px solid #ddd;
@@ -185,10 +216,12 @@ cursor: pointer;
 font-size: 0.9rem;
 color: black;
 text-align: center;
+font-family: var(--font-2);
+gap: 10px;
 }
 
 
-.filter-btn.active {
+.filter-btn:hover {
 background: var(--dark-gray);
 color: white;
 }
@@ -196,9 +229,9 @@ color: white;
 .menu-grid {
 width: 90%;
 margin: auto;
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 25px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
 }
 
 
@@ -206,15 +239,21 @@ gap: 25px;
 background: white;
 border-radius: 14px;
 padding: 18px;
-text-align: center;
+text-align: left;
 box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+font-family: var(--font-2);
+gap: 24px;
 }
 
+.menu-card span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 .menu-card img {
 width: 180px;
 }
-
 
 .menu-card .info {
 display: flex;
@@ -224,22 +263,32 @@ font-weight: bold;
 }
 
 .footer {
-    background: #292929;
-    color: white;
-    padding: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  padding: 20px 40px;
-  font-family: 'Roboto Condensed', sans-serif;
+  background: var(--dark-gray);
+  color: white;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  width: 1920;
+  height: 561.25;
+  top: 2475px;
+  opacity: 1;
+  font-family: var(--font-2);
+  gap: 50px;
+}
+
+.footer-left p, .footer-menu p {
+  font-size: 18px;
 }
 
 .footer h3, .footer h2 {
     margin-bottom: 15px;
+    font-size: 2rem;
 }
 
 .insta-grid {
     display: grid;
+    justify-content: space-between;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
@@ -252,22 +301,20 @@ font-weight: bold;
 
 .footer-bottom {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;              
+    background: var(--dark-gray);            
     padding-top: 15px;
-    border-top: 1px solid #ddd; 
+    border-top: 1px solid var(--beige); 
+    text-align: center;
+    justify-content: center;
 }
 
 .footer-bottom span {
-    font-size: 14px;
-    color: #666;
+    font-size: 1rem;
+    color: var(--beige);
 }
 
-.footer-bottom img {
-    width: 22px;
-    height: 22px;
-    cursor: pointer;
+.twitter-symbol {
+  padding-left: 75%;
 }
 
 h1 {
