@@ -271,6 +271,19 @@ margin-bottom: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-content: center;
+}
+
+.info-rating, .info-stock {
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: var(--font-2);
+  text-align: center;
+  padding-top: 0.2rem;
+}
+
+.info-stock {
+  padding-left: 2.5rem;
 }
 
 .menu-card img {
