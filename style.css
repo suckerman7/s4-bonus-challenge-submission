@@ -320,8 +320,12 @@ font-weight: bold;
 }
 
 .footer-left p, .footer-menu p {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.footer-left img {
+  margin-left: 1rem;
 }
 
 .footer h3, .footer h2 {
