@@ -5,7 +5,6 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -39,10 +38,15 @@ a:hover {
   color: #535bf2;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: var(--beige);
+}
+
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
   background: var(--beige);
@@ -51,15 +55,34 @@ body {
 }
 
 .hero {
-  background: url(public/assets/iteration-1/home-banner.png);
-  background-size: 100% 100%;
-  width: 100%;
-  height: 100%;
-  color: var(--beige);
-  padding: 0 1.25rem 20rem;
-  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  
+  background-image: url(public/assets/iteration-1/home-banner.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
   justify-content: center;
-  align-items: start;
+  overflow: hidden;
+  padding-top: 4rem;
+
+  color: var(--beige);
+}
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 4.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .logo {
@@ -92,6 +115,9 @@ body {
   font-size: 1.1rem;
   font-weight: bold;
   color: var(--dark-gray);
+  align-self: center;
+  margin-top: 1.5rem;
+  width: fit-content;
 }
 
 .hero-pizza {
@@ -101,14 +127,31 @@ body {
 }
 
 .top-nav {
+  width: 100vw;
   background: white;
-  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.top-nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  padding: 20px;
-  border-bottom: 1px solid #ddd;
+}
+
+.top-nav-content > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--dark-gray);
+  font-family: var(--font-2);
 }
 
 .top-nav div {
@@ -350,7 +393,6 @@ font-weight: bold;
   width: 100%;
   background: var(--dark-gray);
   border-top: 1px solid var(--beige);
-  padding: 1.2rem 0;
 
   display: flex;
   justify-content: space-between;
@@ -382,8 +424,7 @@ h1 {
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 2rem;
 }
 
 ul {
@@ -432,42 +473,70 @@ button:focus-visible {
 
 @media (max-width: 768px) {
   body {
-    padding: 0 10px;
+    padding: 0;
+    overflow-x: hidden;
   }
   .hero {
-    padding: 2rem 1rem 4rem;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
+    height: auto;
+    min-height: 100vh;
+    padding: 2.5rem 1rem 4rem;
   }
-  .hero.logo {
-    width: 120px;
-    margin: 0 auto 1rem;
-    display: block;
+
+  .hero-content {
+    padding-top: 2rem;
   }
+
   .hero-title {
-    font-size: 7.3rem;
-    line-height: 6.8rem;
+    font-size: 4.8rem;     
+    line-height: 5.1rem;   
     padding-bottom: 1.5rem;
     margin: 1rem 0;
     word-break: break-word;
   }
+  .hero .logo {
+  width: 240px;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  display: block;
+}
   .hero-subtitle {
     display: none;
   }
   .hero .btn {
     margin-top: 1.5rem;
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
+    padding: 1rem 2.4rem;
+    font-size: 1.4rem; 
   }
   .hero-pizza {
     width: 90%;
   }
   .top-nav {
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+   .top-nav-content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px 10px;
+    width: 100%;
+    max-width: none;
+    padding: 30px 15px;
+    box-sizing: border-box;
+    justify-items: center;
+  }
+
+  .top-nav-content > div {
+    min-width: 0;
+    display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    height: 180px;
-    padding: 50px 15px;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .top-nav-content span {
+    font-size: 0.75rem;
+    white-space: nowrap;
   }
   .promo-section {
     display: flex;
@@ -476,6 +545,8 @@ button:focus-visible {
     align-items: center;
     gap: 15px;
     margin-top: 2.2rem;
+    width: 100%;
+    overflow-x: hidden;
   }
   .promo-card-left, .promo-card-right-top, .promo-card-right-bottom {
     width: 422px;
@@ -485,15 +556,24 @@ button:focus-visible {
     background-position: center;
     position: relative;
     padding: 1.5rem;
-    margin-left: 2.5rem;
   }
   .promo-card-left {
     height: 336px;
   }
   .promo-card-right {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 15px;
-    margin-left: 9rem;
+
+    width: 100%;
+  }
+
+  .promo-card-right-top,
+  .promo-card-right-bottom {
+    width: 422px;
+    max-width: 100%;
+    margin: 0;
   }
   .promo-card-right-top {
     height: 270px;
@@ -518,6 +598,12 @@ button:focus-visible {
   .promo-card button {
     padding: 12px 27px;
     font-size: 0.9rem;
+  }
+  .promo-card-left,
+  .promo-card-right-top,
+  .promo-card-right-bottom,
+  .promo-card-right {
+    margin-left: 0 !important;
   }
   .filter-buttons {
     display: grid;
@@ -569,7 +655,6 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
   }
   a:hover {
     color: #747bff;
